@@ -1,5 +1,6 @@
 const Receipt = require('../utils/receipt.js');
 const productsService = require('../services/products.js');
+const CODES = require('../utils/httpErrors.js')
 
 function applicableForDiscount(promotionQuantity, quantityBought) {
     return quantityBought >= promotionQuantity;
@@ -23,9 +24,9 @@ function calculateDiscount(type, discount, quantityBought) {
 const getProducts = async (req, res) => {
     try {
         const data = await productsService.getProducts();
-        res.status(200).json(data);
+        res.status(CODES.STATUS.OK).json(data);
     } catch(err) {
-        res.status(404).json(err);
+        res.status(err.code).send({ error: err.msg});
     }
 }
 
@@ -51,7 +52,7 @@ const buyProducts = async (req, res) => {
             }
         }
         
-        res.status(200).json(receipt);
+        res.status(CODES.STATUS.OK).json(receipt);
     } catch (err) {
         res.status(err.code).send({ error: err.msg});
     }

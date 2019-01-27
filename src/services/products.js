@@ -1,5 +1,6 @@
 const db = require('./database.js')
-const Error = require('../utils/statusError')
+const Error = require('../utils/statusError.js')
+const CODES = require('../utils/httpErrors.js')
 
 const getProducts = async () => {
     return db.Products;
@@ -8,7 +9,7 @@ const getProducts = async () => {
 const getProductsById = async (productId) => {
     productInfo = db.Products[productId];
     if (productInfo == null) {
-        throw new Error(404, 'Product does not exists'); 
+        throw new Error(CODES.STATUS.NOT_FOUND, CODES.MSG.NOT_FOUND_ITEM); 
     }
     return productInfo
 };
