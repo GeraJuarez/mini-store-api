@@ -1,0 +1,23 @@
+{
+  "name": "mini-store-api",
+  "version": "1.0.0",
+  "description": "A store API with three products",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeraJuarez/mini-store-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeraJuarez/mini-store-api/issues"
+  },
+  "homepage": "https://github.com/GeraJuarez/mini-store-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
