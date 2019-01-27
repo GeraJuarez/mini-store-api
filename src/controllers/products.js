@@ -53,7 +53,7 @@ const buyProducts = async (req, res) => {
         
         res.status(200).json(receipt);
     } catch (err) {
-        res.status(404).json(err);
+        res.status(err.code).send({ error: err.msg});
     }
 }
 
