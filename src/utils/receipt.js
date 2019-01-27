@@ -3,6 +3,7 @@ class Receipt {
         this.totalPrice = 0;
         this.itemsCount = 0;
         this.itemList = {};
+        this.aplicablePromos = [];
     }
     addItem(id, item) {
         if (this.itemList.hasOwnProperty(id)) {
@@ -14,6 +15,14 @@ class Receipt {
 
         this.itemsCount += 1;
         this.totalPrice += item.price;
+    }
+    applyDiscount(promoId, discount, itemId) {
+        this.totalPrice -= discount;
+        this.aplicablePromos.push({
+            itemId,
+            promoId,
+            discount,
+        });
     }
 }
 
