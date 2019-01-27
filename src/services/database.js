@@ -13,6 +13,22 @@ const Products = {
     }
 }
 
+const Promotions = {
+    PANTS: {
+        TWO_FOR_ONE: {
+            quantityCondition: 2,
+            discount: 5.0,
+        }
+    },
+    TSHIRT: {
+        BULK: {
+            quantityCondition: 3,
+            discount: 1.0,
+        }
+    }
+}
+
 module.exports = {
     Products,
+    Promotions,
 }
