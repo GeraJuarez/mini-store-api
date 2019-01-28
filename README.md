@@ -8,6 +8,26 @@ PANTS | Pants | $5.00
 TSHIRT | T-Shirt | $20.00
 HAT | Hat | $7.50
 
+## How to run
+
+The api is usign *NodeJS* and *npm*.
+
+First clone the repository either with ssh or https, and run the api...
+
+```bash
+# clone repo
+$ git clone <insert github url here>
+
+# change directory
+$ cd mini-store-api
+
+# run api
+$ npm start
+```
+
+
+# API Documentation
+
 ## URL
 
 `localhost:8080/api`
